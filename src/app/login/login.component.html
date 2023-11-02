@@ -1,0 +1,55 @@
+<div class="body">
+    <div class="conatinerLogin">
+      <div class="loginImage">
+
+      </div>
+      <div class="loginForm">
+        <div class="loginFormContainer" *ngIf="currentForm">
+          <div class="loginFormLogo">
+            <img [src]="imageUrl" alt="">
+            <p class="mt-4">Sign into your account</p>
+          </div>
+          <form class="mt-4">
+            <div class="mb-3 inputContainer">
+              <input type="email" class="form-control h-100" id="inputEmail" aria-describedby="emailHelp"
+                placeholder="Email address" [(ngModel)] = "emailInput" name="email">
+            </div>
+            <div class="mb-3 inputContainer">
+              <input type="password" class="form-control h-100" id="inputPassword" placeholder="****************"
+              [(ngModel)] = "passwordInput" name="password">
+            </div>
+            <button type="button" class="btn btn-dark col-12 buttonSubmit mb-3" (click)="login()">Login</button>
+          </form>
+          <br>
+            <div style="margin-bottom: 20%;">
+              <a href="#" class="text-muted"style="text-decoration: none;" >Forgot password? </a>
+            <p class="fw-bold" style="color: #0D3FA1;">Don't have an account?<a href="#" style="color: #0D3FA1;text-decoration: none;" (click) = "switchForm()">Register here</a></p>
+            </div>
+          <a href="#" class="text-muted loginFormContainer_bottom" style="text-decoration: none;">Terms of use.Privacy policy</a>
+        </div>
+
+
+        <div class="loginFormContainer" *ngIf="!currentForm">
+          <div class="loginFormLogo">
+            <img [src]="imageUrl" alt="">
+            <p class="mt-4">Sign into your account</p>
+          </div>
+          <form class="mt-4">
+            <div class="mb-3 inputContainer">
+              <input type="nomComplet" class="form-control h-100" id="inputNomComplet" aria-describedby="nomCompletHelp"
+                placeholder="Veuillez entrer votre nom Complet" [(ngModel)] = "nomCompletInput" name="nomComplet">
+            </div>
+            <div class="mb-3 inputContainer">
+              <input type="email" class="form-control h-100" id="inputEmail" aria-describedby="emailHelp"
+                placeholder="Email address" [(ngModel)] = "emailInput" name="email">
+            </div>
+            <div class="mb-3 inputContainer">
+              <input type="password" class="form-control h-100" id="inputPassword" placeholder="****************"
+              [(ngModel)] = "passwordInput" name="password">
+            </div>
+            <button type="button" class="btn btn-dark col-12 buttonSubmit mb-3" (click)="register()">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
